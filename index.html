@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffcfb5">
+  <meta name="description" content="DP BOSS – Number Prediction. Telegram channel par paaye regular number updates aur latest information.">
+  <title>DP BOSS – Number Prediction</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1091397480022562');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1091397480022562&ev=PageView&noscript=1"
+    alt="">
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --peach: #ffcfb5;
+      --pink: #f02b83;
+      --black: #171219;
+      --muted: #66565d;
+      --telegram: #229ed9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      color: var(--black);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 8% 15%, rgba(255,255,255,.62), transparent 34%),
+        radial-gradient(ellipse at 94% 75%, rgba(255,150,139,.25), transparent 35%),
+        linear-gradient(135deg, #ffe1cf 0%, #ffc7ac 52%, #ffbcae 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+    }
+
+    .decoration {
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .decoration-one {
+      width: 240px;
+      height: 240px;
+      top: 19%;
+      left: -150px;
+      border: 1px solid rgba(240,43,131,.14);
+      box-shadow:
+        0 0 0 24px rgba(240,43,131,.035),
+        0 0 0 48px rgba(240,43,131,.025);
+    }
+
+    .decoration-two {
+      width: 210px;
+      height: 210px;
+      right: -135px;
+      bottom: 12%;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .decoration-three {
+      position: absolute;
+      z-index: -1;
+      width: 95px;
+      height: 95px;
+      top: 15%;
+      right: 12%;
+      opacity: .25;
+      background-image: radial-gradient(var(--pink) 1.3px, transparent 1.3px);
+      background-size: 12px 12px;
+      mask-image: linear-gradient(135deg, #000, transparent);
+      pointer-events: none;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 25px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      animation: fade-down .7s ease both;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      color: white;
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -1.8px;
+      background: linear-gradient(145deg, #ff5ba4, #e71972);
+      box-shadow: 0 7px 17px rgba(218,28,112,.22);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 11px;
+    }
+
+    .brand-name {
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.8px;
+    }
+
+    .brand-name span {
+      color: var(--pink);
+    }
+
+    .brand-caption {
+      margin-top: 5px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #72565c;
+    }
+
+    .header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 100px;
+      background: rgba(255,255,255,.37);
+      color: #49373c;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .9px;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #21b66e;
+      box-shadow: 0 0 0 4px rgba(33,182,110,.12);
+      animation: status-pulse 2s ease-in-out infinite;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 940px;
+      flex: 1;
+      margin: 0 auto;
+      padding: 32px 22px 38px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid rgba(240,43,131,.17);
+      border-radius: 100px;
+      background: rgba(255,255,255,.45);
+      color: #a91b5b;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      animation: fade-up .7s .08s ease both;
+    }
+
+    .eyebrow-icon {
+      display: inline-flex;
+      color: var(--pink);
+    }
+
+    h1 {
+      margin-top: 27px;
+      font-size: clamp(39px, 7.2vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2.8px;
+      font-weight: 900;
+      animation: fade-up .7s .15s ease both;
+    }
+
+    h1 .highlight {
+      display: block;
+      color: var(--pink);
+      text-shadow: 0 5px 20px rgba(240,43,131,.09);
+    }
+
+    .hero-description {
+      max-width: 490px;
+      margin-top: 19px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+      font-weight: 500;
+      animation: fade-up .7s .22s ease both;
+    }
+
+    .hero-description strong {
+      color: #282026;
+      font-weight: 800;
+    }
+
+    .cta-wrap {
+      width: 100%;
+      max-width: 380px;
+      margin-top: 30px;
+      animation: fade-up .7s .3s ease both;
+    }
+
+    .telegram-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      width: 100%;
+      min-height: 68px;
+      padding: 15px 23px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 19px;
+      background: linear-gradient(135deg, #31b5ed, #168bd0);
+      box-shadow:
+        0 12px 26px rgba(21,133,194,.27),
+        inset 0 1px 0 rgba(255,255,255,.3);
+      color: white;
+      text-align: left;
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .telegram-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      height: 100%;
+      transform: skewX(-20deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+      transition: left .65s ease;
+    }
+
+    .telegram-button:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 17px 33px rgba(21,133,194,.34),
+        inset 0 1px 0 rgba(255,255,255,.3);
+      filter: saturate(1.08);
+    }
+
+    .telegram-button:hover::before {
+      left: 130%;
+    }
+
+    .telegram-button:active {
+      transform: scale(.975);
+    }
+
+    .telegram-button:focus-visible {
+      outline: 3px solid #171219;
+      outline-offset: 5px;
+    }
+
+    .telegram-icon {
+      display: grid;
+      place-items: center;
+      width: 41px;
+      height: 41px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      background: rgba(255,255,255,.19);
+    }
+
+    .button-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .button-title {
+      display: block;
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: .1px;
+    }
+
+    .button-subtitle {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: rgba(255,255,255,.88);
+    }
+
+    .button-arrow {
+      display: grid;
+      place-items: center;
+      width: 31px;
+      height: 31px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.17);
+      transition: transform .22s ease;
+    }
+
+    .telegram-button:hover .button-arrow {
+      transform: translateX(3px);
+    }
+
+    .trust-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 15px;
+      color: #725b5d;
+      font-size: 11px;
+      font-weight: 600;
+      animation: fade-up .7s .38s ease both;
+    }
+
+    .trust-note svg {
+      color: #29995c;
+      flex-shrink: 0;
+    }
+
+    .bottom-accent {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 36px;
+      color: #89686b;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      animation: fade-up .7s .44s ease both;
+    }
+
+    .bottom-accent::before,
+    .bottom-accent::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: rgba(137,104,107,.45);
+    }
+
+    .footer {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 17px 24px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(105,61,67,.12);
+    }
+
+    .footer-brand {
+      color: #47333a;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .footer-brand span {
+      color: var(--pink);
+    }
+
+    .footer-text {
+      color: #82666a;
+      font-size: 10px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-down {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes status-pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(33,182,110,.12); }
+      50% { box-shadow: 0 0 0 7px rgba(33,182,110,.06); }
+    }
+
+    @media (min-width: 900px) {
+      .header {
+        padding-top: 30px;
+        padding-bottom: 25px;
+      }
+
+      .main {
+        padding-top: 36px;
+        padding-bottom: 42px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 19px 18px;
+      }
+
+      .brand { gap: 9px; }
+
+      .brand-mark {
+        width: 41px;
+        height: 41px;
+        border-radius: 13px;
+        font-size: 17px;
+      }
+
+      .brand-name { font-size: 18px; }
+
+      .brand-caption {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+      }
+
+      .header-tag {
+        gap: 7px;
+        padding: 9px 10px;
+        font-size: 8px;
+        letter-spacing: .45px;
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .main {
+        padding: 35px 21px;
+      }
+
+      .eyebrow {
+        padding: 8px 12px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+      }
+
+      h1 {
+        margin-top: 25px;
+        font-size: clamp(40px, 10vw, 55px);
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        max-width: 350px;
+        margin-top: 17px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .cta-wrap {
+        max-width: 360px;
+        margin-top: 26px;
+      }
+
+      .telegram-button {
+        min-height: 65px;
+        padding: 13px 15px;
+        gap: 11px;
+        border-radius: 17px;
+      }
+
+      .button-title { font-size: 15px; }
+      .button-subtitle { font-size: 10px; }
+
+      .bottom-accent {
+        margin-top: 31px;
+        font-size: 9px;
+      }
+
+      .footer {
+        padding: 15px 19px 18px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header {
+        padding-right: 13px;
+        padding-left: 13px;
+      }
+
+      .brand-name { font-size: 16px; }
+
+      .header-tag {
+        padding: 8px;
+        font-size: 7px;
+      }
+
+      .main {
+        padding-right: 17px;
+        padding-left: 17px;
+      }
+
+      h1 { font-size: 38px; }
+
+      .footer-text {
+        max-width: 145px;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-height: 700px) and (min-width: 601px) {
+      .header {
+        padding-top: 16px;
+        padding-bottom: 12px;
+      }
+
+      .main {
+        padding-top: 18px;
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        margin-top: 18px;
+        font-size: clamp(40px, 5vw, 58px);
+      }
+
+      .hero-description { margin-top: 12px; }
+      .cta-wrap { margin-top: 20px; }
+      .telegram-button { min-height: 60px; }
+      .bottom-accent { margin-top: 22px; }
+
+      .footer {
+        padding-top: 12px;
+        padding-bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="decoration decoration-one" aria-hidden="true"></div>
+    <div class="decoration decoration-two" aria-hidden="true"></div>
+    <div class="decoration-three" aria-hidden="true"></div>
+
+    <header class="header">
+      <a class="brand" href="#" aria-label="DP BOSS Home">
+        <span class="brand-mark" aria-hidden="true">DP</span>
+        <span>
+          <span class="brand-name">DP <span>BOSS</span></span>
+          <span class="brand-caption">NUMBER PREDICTION</span>
+        </span>
+      </a>
+
+      <div class="header-tag">
+        <span class="status-dot" aria-hidden="true"></span>
+        DAILY NUMBER UPDATES
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="eyebrow">
+        <span class="eyebrow-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.8l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 2.8z"
+              stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        WELCOME TO DP BOSS
+      </div>
+
+      <h1>
+        Number
+        <span class="highlight">Prediction</span>
+      </h1>
+
+      <p class="hero-description">
+        Welcome to <strong>DP BOSS!</strong> Yahan paaye regular number
+        updates aur latest information. Daily updates ke liye hamare
+        official Telegram channel se jud jaayein.
+      </p>
+
+      <div class="cta-wrap">
+        <a
+          class="telegram-button"
+          href="https://t.me/+8lyZtEnZ8pA2NWU1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Join DP BOSS Telegram channel"
+        >
+          <span class="telegram-icon" aria-hidden="true">
+            <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.5 3.5L18.2 20c-.25 1.16-.94 1.45-1.9.9l-5.25-3.87-2.53 2.44c-.28.28-.51.51-1.05.51l.37-5.35L17.58 6.5c.42-.37-.09-.58-.65-.21L6.04 13.18.86 11.56c-1.13-.35-1.15-1.13.24-1.68L20.8 2.27c.93-.34 1.74.22 1.44 1.23L21.5 3.5z"
+                fill="currentColor"/>
+            </svg>
+          </span>
+
+          <span class="button-copy">
+            <span class="button-title">Join Telegram Channel</span>
+            <span class="button-subtitle">Daily updates ke liye yahan click karein</span>
+          </span>
+
+          <span class="button-arrow" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M13 5l7 7-7 7"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <div class="trust-note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m9 12 2 2 4-4"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Quick access to our Telegram channel
+        </div>
+      </div>
+
+      <div class="bottom-accent">STAY CONNECTED WITH DP BOSS</div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">© DP <span>BOSS</span></div>
+      <div class="footer-text">Your daily updates, all in one place.</div>
+    </footer>
+  </div>
+</body>
+</html>
